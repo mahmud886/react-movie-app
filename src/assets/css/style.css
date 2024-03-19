@@ -1,0 +1,384 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body{
+    font-family: Poppins;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    cursor: pointer;
+}
+.dark .down-shadow{
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1))
+}
+.down-shadow{
+    background: linear-gradient(to bottom, rgba(75, 72, 72, 0) 40%, rgba(241, 245, 249, 1))
+}
+
+/* Add this CSS code to create the hover effect on the slides */
+/* Common Video Card Hover Effect */
+.commonVideoCard {
+
+    transition: all 0.4s ease-out;
+    overflow: hidden;
+}
+.commonVideoCard .card{
+    overflow: hidden;
+    height: auto;
+}
+
+.commonVideoCard img{
+    object-fit: cover;
+    height: max-content;
+}
+.commonVideoCard:hover .videoWrap{
+    height: 100%;
+    display: block;
+    background: linear-gradient(0deg,rgba(15,22,34,.2),transparent);
+}
+.commonVideoCard:hover figure{
+    display: flex;
+}
+
+.playBtn {
+    opacity: 0;
+    width: 52px;
+    height: 52px;
+    transition: all 0.3s ease-in;
+    font-size: 24px;
+    z-index: 11;
+    border-radius: 50%;
+    color:#e70101;
+    background-color: rgba(250,251,255,.7); 
+    
+}
+.commonVideoCard:hover .playBtn{
+    opacity: 1;
+    z-index: 111;
+    font-size: 21px; 
+}
+.playBtn:hover{
+    color: #fff;
+    background: #e70101;
+
+}
+.commonVideoCard:hover .play-button {
+    width: 52px;
+    height: 52px;
+    margin:auto;
+    background-color: #fff; /* You can change the color to your preference */
+    border-radius: 50%;
+    animation: flash 0.8s infinite alternate-reverse, flash2 0.8s infinite alternate-reverse; /* Flashing animation */ /* Flashing animation */
+    
+}
+
+/* Define the flashing animation */
+@keyframes flash {
+    0% {
+        opacity: 0.4;
+        margin: auto;
+        
+    }
+    40% {
+        opacity: 0.2;
+        width: 70px;
+        height: 70px;
+        margin: auto;
+    }
+}
+@keyframes flash2 {
+    40% {
+        opacity: 0.3;
+        margin: auto;
+        
+    }
+    100% {
+        opacity: 0.1;
+        width: 90px;
+        height: 90px;
+        margin: auto;
+    }
+}
+.actionWrap{
+    min-width: 50px;
+    min-height: 50px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    opacity: 0;
+}
+
+/* Common Video Card Hover Effect End*/
+/* SingleMovie Page button Animation */
+.player-rounded-Button span.after, .player-rounded-Button span.before{
+    content: "";
+    position: absolute;
+}
+.player-rounded-Button span.before {
+    -webkit-animation: brk-pulse-paused 1s ease-in .2s infinite;
+    animation: brk-pulse-paused 1s ease-in .2s infinite;
+    background: #fff;
+    border-radius: 100%;
+    bottom: -33px;
+    left: -33px;
+    opacity: .1;
+    right: -33px;
+    top: -33px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.player-rounded-Button span.after {
+    -webkit-animation: brk-pulse-paused 1s ease-in infinite;
+    animation: brk-pulse-paused 1s ease-in infinite;
+    background: #fff;
+    border-radius: 100%;
+    bottom: -16px;
+    left: -16px;
+    opacity: .2;
+    right: -16px;
+    top: -16px;
+}
+@keyframes brk-pulse-paused{
+    0%, 100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    20% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+    60% {
+        opacity: 0;
+        -webkit-transform: scale(.9);
+        transform: scale(.9);
+    }
+}
+/*End SingleMovie Page button Animation */
+.dark .bg-darkMenu{
+    background: #262626;
+}
+.bg-darkMenu{
+    background: #e2e8f0;
+}
+.text-stroke-black {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    color: transparent;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Add styles for dark mode using the dark-mode class */
+.dark .text-stroke-black {
+    -webkit-text-stroke-color: white;
+}
+/* .text-stroke-2 {
+    
+    line-height: 55px;
+    -webkit-text-stroke-width: 1px; 
+    -webkit-text-stroke-color: white; 
+} */
+/*Navbar*/
+.dark .glass-bg-gradient{
+    background: linear-gradient(to bottom, rgba(0,0,0,1) 20%, rgba(0,0,0,0)90%)
+}
+.glass-bg-gradient{
+    background: linear-gradient(to bottom, rgba(255, 255, 255,.89) 20%, rgba(255, 255, 255,0)95%)
+}
+ .glass-bg-solid{
+    background: #cbd5e1;
+    box-shadow: 0 4px 5px 0 #00000050;
+}
+.dark .glass-bg-solid{
+    background: #020617;
+    box-shadow: 0 4px 5px 0 #00000050;
+}
+.navbarMainMenu{}
+.navbarMainMenu .navMenuItem .submenu{
+    opacity: 0;
+    visibility: hidden;
+
+}
+
+.navbarMainMenu .navMenuItem:hover .submenu{
+    transition: all 0.2s ease-in;
+    visibility: visible;
+    opacity: 1;
+}
+.navbarMainMenu .navMenuItem .submenudiv{
+    transition: all 0.2s ease-in;
+    transform: translateY(-30px) scaleY(0.95);
+}
+.navbarMainMenu .navMenuItem:hover .submenudiv{
+    transition: all 0.2s ease-in;
+    transform: translateY(0px) scaleY(1);
+}
+
+@media(max-width: 767px){
+    .navbarMainMenu .navMenuItem .submenu{
+        opacity: 1;
+        visibility: visible;
+
+    }
+    .navbarMainMenu .navMenuItem .submenudiv{
+        transform: translateY(0px) scaleY(1);
+    }
+}
+
+.swiper-button-next.swiper-button-disabled,.swiper-button-prev.swiper-button-disabled {
+    opacity: 0;
+}
+.swiper-button-next:after, .swiper-button-prev:after {
+    font-family: swiper-icons;
+    font-size:calc(var(--swiper-navigation-size)/2) ;
+    font-weight: 700;
+    text-transform: none!important;
+    letter-spacing: 0;
+    font-variant: initial;
+    line-height: 1;
+}
+.swiper-button-prev,.swiper-button-next {
+    --size: 60px;
+    background: none;
+    background: rgba(250,251,255,.75);
+    background: rgba(0,0,0,.5);
+    height: var(--size);
+    height: 100%;
+    max-width: 60px;
+    outline-offset: 5px;
+    position: absolute;
+    top: 0;
+    transition: all .3s ease;
+    width: var(--size);
+    width: 100%;
+    z-index: 10000;
+    color: white;
+    margin: auto;
+    overflow: visible;
+}
+.swiper-button-prev:hover,.swiper-button-next:hover {
+    background: rgba(0,0,0,.7);
+}
+.swiper-button-next{
+    right: 0;
+}
+.swiper-button-prev {
+    left: 0;
+}
+
+.videoCardsNonHoverPlay:hover .playLayer{
+    opacity:1;
+}
+
+
+/********* CST RANGE ************** */
+input[type=range]::-webkit-slider-thumb {
+    pointer-events: all;
+    width: 24px;
+    height: 24px;
+    -webkit-appearance: none;
+    /* @apply w-6 h-6 appearance-none pointer-events-auto; */
+}
+
+/* media query for homepage card hover trailer */
+
+@media(min-width: 768px){
+    .commonVideoCard .card{
+        overflow: hidden;
+        height: calc(100vw / 6)!important;
+    }
+    .commonVideoCard:hover {
+        width: 530px !important;
+        z-index: 11;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    .commonVideoCard:hover figure{
+        display: none;
+    }
+    .commonVideoCard:hover .actionWrap{
+        opacity: 1;
+        z-index: 111;
+    }
+    .commonVideoCard:hover .actionBtn{
+        width: 50px;
+        height: 50px;
+        background: rgba(250,251,255,.1);
+        border-radius: 50%;
+    }
+    .commonVideoCard:hover .actionBtn:hover{
+        background: rgba(250,251,255,.2);
+    }
+    .text-stroke-2 {
+        /* font-family: Outfit; */
+        line-height: 110px;
+        -webkit-text-stroke-width: 1px; /* Width of the stroke */
+        -webkit-text-stroke-color: white; /* Color of the stroke */
+    }
+}
+
+
+
+.placeholderColorWhite::placeholder {
+    color: #fff; /* Change this to the desired color */
+}
+
+
+/*liveTVsliderWrap*/
+
+.liveTVsliderWrap{}
+.liveTVsliderWrap .swiper-button-prev,
+.liveTVsliderWrap .swiper-button-next{
+    /*height: 100px;*/
+}
+.liveTVsliderWrap .swiper-pagination{
+    bottom:50px!important;
+}
+.liveTVsliderWrap .swiper-pagination .swiper-pagination-bullet{
+    width: 16px;
+    height: 16px;
+    background: #6d6d6d;
+    opacity: 1;
+}.liveTVsliderWrap .swiper-pagination .swiper-pagination-bullet-active{
+    background: #2C2C2C;
+}
+
+
+/* All TV Image Background perspective*/
+.perspectiveTest {
+    position: relative;
+    perspective: 400px; /* Adjust perspective value as needed */
+}
+
+.perspectiveTest::after {
+    content: ''; /* Add content for the pseudo-element */
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: calc(100vw / 60);
+    background-color: rgba(100, 100, 100, 0.5);
+    transform-style: preserve-3d;
+    transform: rotateY(45deg) translateX(10px);
+    transition: transform 0.5s ease; /* Optional: Add transition for smoother effect */
+}
+
+
+
+.perspective1 {
+    width: calc(100vw / 10);
+    height: calc(100vw / 15);
+    border: 1px solid white;
+    perspective: 300px;
+    transform: translateX(20px);
+}
+
+.perspective2 {
+    width:100%;
+    height: 100%;
+    border-radius: calc(100vw / 60);
+    transform-style: preserve-3d;
+    transform: rotateY(30deg);
+}
