@@ -1,7 +1,8 @@
 import {useEffect, useRef, useState} from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { EffectCoverflow, Pagination, Autoplay  } from 'swiper/modules';
+import 'swiper/css/autoplay';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -106,11 +107,13 @@ const CoverflowSlider = () => {
               </div>
             </div>
             <Swiper
+
               onSlideChange={(swiper) => handleSlideChange(swiper.activeIndex)} ref={swiperRef}
               effect="coverflow"
               grabCursor={true}
               centeredSlides={true}
               slidesPerView="auto"
+              autoplay={{ delay: 5000 }}
               coverflowEffect={{
                 rotate: 0,
                 stretch: 0,
@@ -121,7 +124,7 @@ const CoverflowSlider = () => {
               initialSlide={2}
               loop={true}
               pagination={true}
-              modules={[EffectCoverflow]}
+              modules={[EffectCoverflow, Autoplay]}
               className="swiper homepageCardSlider w-[45%] pt-8 md:pt-12"
             >
               <div className='swiper-wrapper' id='sliderSlides'>
